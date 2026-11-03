@@ -1,0 +1,384 @@
+
+:root {
+    --bg: #f7f3ea;
+    --surface: #fffdf8;
+    --ink: #1d2340;
+    --muted: #5b5f78;
+    --accent: #c8851a;
+    --h: #2b3fa8;
+    --h2: #0f766e;
+    --link: #b4470c;
+    --lead: #4a3f9a;
+    --green: #15803d;
+    --accent-ink: #1d2340;
+    --line: #e2dbc9;
+    --navy: #1d2340;
+}
+
+html {
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.65 Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+}
+
+h1, h2, h3, nav, .btn, .tag, label, .facts dt {
+    font-family: "Trebuchet MS", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: var(--link);
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 22px;
+}
+
+header {
+    border-bottom: 1px solid var(--line);
+}
+
+header .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--h);
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+    font-size: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--link);
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--h);
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 48px;
+    align-items: center;
+    padding: 64px 0 72px;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 5.4vw, 3.8rem);
+    line-height: 1.08;
+    margin: 0 0 20px;
+    letter-spacing: -.02em;
+    color: var(--green);
+}
+
+.lead {
+    font-size: 1.15rem;
+    color: var(--lead);
+    max-width: 34em;
+    margin: 0 0 28px;
+}
+
+.btns {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    border: 2px solid var(--h);
+    color: var(--h);
+}
+
+.btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #1d2340;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.photo {
+    position: relative;
+    justify-self: center;
+    width: 100%;
+    max-width: 380px;
+}
+
+.photo::before {
+    content: "";
+    position: absolute;
+    inset: 18px -18px -18px 18px;
+    background: var(--accent);
+    border-radius: 28px 140px 28px 28px;
+    z-index: 0;
+}
+
+.photo img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    object-position: 50% 70%;
+    border-radius: 28px 140px 28px 28px;
+    background: var(--navy);
+}
+
+section {
+    padding: 56px 0;
+    border-top: 1px solid var(--line);
+}
+
+h2 {
+    font-size: 1.9rem;
+    margin: 0 0 24px;
+    letter-spacing: -.01em;
+    color: var(--h2);
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+}
+
+.about p {
+    margin: 0 0 16px;
+    max-width: 34em;
+}
+
+.facts {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px 24px;
+    align-self: start;
+}
+
+.facts dt {
+    font-size: 14px;
+    color: var(--h2);
+    margin-top: 14px;
+}
+
+.facts dt:first-child {
+    margin-top: 0;
+}
+
+.facts dd {
+    margin: 2px 0 0;
+    font-weight: 600;
+}
+
+.skills {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills li {
+    padding: 8px 16px;
+    color: var(--h);
+    border: 1.5px solid var(--h);
+    border-radius: 999px;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 15px;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--h);
+}
+
+.card p {
+    margin: 0;
+    color: var(--lead);
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.tag {
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: transparent;
+    border: 1.5px solid var(--h2);
+    color: var(--h2);
+}
+
+.card .btn {
+    align-self: flex-start;
+    padding: 9px 18px;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 48px;
+}
+
+form {
+    display: grid;
+    gap: 14px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    display: grid;
+    gap: 6px;
+    color: var(--h2);
+}
+
+input, textarea {
+    font: inherit;
+    color: inherit;
+    background: var(--surface);
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 14px;
+    width: 100%;
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+form .btn {
+    justify-self: start;
+    cursor: pointer;
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #1d2340;
+    font-family: inherit;
+}
+
+.links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+footer {
+    border-top: 1px solid var(--line);
+    padding: 26px 0;
+    color: var(--lead);
+    font-size: 14px;
+}
+
+@media (max-width: 800px) {
+    .hero,
+    .about,
+    .contact,
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 40px 0 56px;
+        gap: 40px;
+    }
+
+    .photo {
+        max-width: 300px;
+        margin-right: 18px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg: #12152b;
+        --surface: #1b1f3b;
+        --ink: #f3efe3;
+        --muted: #a9adc6;
+        --accent: #e9a63a;
+        --h: #9fb4ff;
+        --h2: #5eead4;
+        --link: #f5b84a;
+        --lead: #c4b5fd;
+        --green: #4ade80;
+        --line: #2d3256;
+        --navy: #0c0e1e;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .btn:hover {
+        transform: none;
+    }
+}
